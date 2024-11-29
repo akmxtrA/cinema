@@ -1,0 +1,264 @@
+﻿<Window x:Class="cinema.sessionCashier"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:cinema"
+        mc:Ignorable="d"
+        Title="sessionCashier" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Image x:Name="filmImg" HorizontalAlignment="Left" Height="100" Margin="332,10,0,0" VerticalAlignment="Top" Width="100" Source="/res/films/ratatuy.jpg" Stretch="UniformToFill"/>
+        <Label x:Name="hollLabel" Content="Зал:" HorizontalAlignment="Left" Margin="58,124,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="filmLabel" Content="Фильм:" HorizontalAlignment="Left" Margin="362,118,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="costLabel" Content="Цена:" HorizontalAlignment="Left" Margin="86,355,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="confirmBtn" Content="Оформить" HorizontalAlignment="Center" Margin="0,363,0,0" VerticalAlignment="Top" Click="confirmBtn_Click"/>
+        <Canvas x:Name="firstHoll" Margin="132,142,132,76" Visibility="Hidden">
+            <Border x:Name="CanvasBorder" BorderBrush="Black" BorderThickness="1" Height="216" Width="536" HorizontalAlignment="Center" VerticalAlignment="Top" IsEnabled="False"/>
+            <Separator HorizontalAlignment="Left" VerticalAlignment="Top" Height="9" RenderTransformOrigin="0.5,0.5" Width="444" Foreground="#FF00E2FF" Canvas.Left="55" Canvas.Top="1">
+                <Separator.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF00F9FF"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Separator.Background>
+                <Separator.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="5"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Separator.RenderTransform>
+            </Separator>
+            <Label Content="Вход" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="444" Canvas.Top="187"/>
+            <Label Content="Ряд 1" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="20" Canvas.Top="46"/>
+            <Label Content="Ряд 1" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="495" Canvas.Top="46"/>
+            <Label Content="Ряд 2" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="20" Canvas.Top="86"/>
+            <Label Content="Ряд 3" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="20" Canvas.Top="121"/>
+            <Label Content="Ряд 4" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="20" Canvas.Top="156"/>
+            <Label Content="Ряд 2" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="495" Canvas.Top="86"/>
+            <Label Content="Ряд 3" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="495" Canvas.Top="121"/>
+            <Label Content="Ряд 4" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="495" Canvas.Top="156"/>
+            <CheckBox x:Name="firstOneOne" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="249" Canvas.Top="49">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="firstOneTwo" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="281" Canvas.Top="49">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="firstTwoOne" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="249" Canvas.Top="84">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="firstTwoTwo" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="281" Canvas.Top="84">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="firstThreeOne" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="249" Canvas.Top="119">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="firstThreeTwo" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="281" Canvas.Top="119">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="firstFourthOne" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="249" Canvas.Top="154">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="firstFourthTwo" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="281" Canvas.Top="154">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+        </Canvas>
+        <Canvas x:Name="secondHoll" Margin="132,142,132,76">
+            <Border x:Name="CanvasBorder1" BorderBrush="Black" BorderThickness="1" Height="216" Width="536" HorizontalAlignment="Center" VerticalAlignment="Top" IsEnabled="False"/>
+            <Separator HorizontalAlignment="Left" VerticalAlignment="Top" Height="9" RenderTransformOrigin="0.5,0.5" Width="444" Foreground="#FF00E2FF" Canvas.Left="55" Canvas.Top="1">
+                <Separator.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF00F9FF"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Separator.Background>
+                <Separator.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="5"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Separator.RenderTransform>
+            </Separator>
+            <Label Content="Вход" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="444" Canvas.Top="187"/>
+            <Label Content="Ряд 1" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="20" Canvas.Top="46"/>
+            <Label Content="Ряд 1" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="495" Canvas.Top="46"/>
+            <Label Content="Ряд 2" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="20" Canvas.Top="86"/>
+            <Label Content="Ряд 3" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="20" Canvas.Top="121"/>
+            <Label Content="Ряд 4" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="20" Canvas.Top="156"/>
+            <Label Content="Ряд 2" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="495" Canvas.Top="86"/>
+            <Label Content="Ряд 3" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="495" Canvas.Top="121"/>
+            <Label Content="Ряд 4" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="495" Canvas.Top="156"/>
+            <CheckBox x:Name="secondOneOne" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="245" Canvas.Top="49">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="secondOneTwo" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="277" Canvas.Top="49">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="secondTwoOne" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="245" Canvas.Top="84">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="secondTwoTwo" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="277" Canvas.Top="84">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="secondThreeOne" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="245" Canvas.Top="117">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="secondFourthOne" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="245" Canvas.Top="152">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+        </Canvas>
+        <Canvas x:Name="thirdHoll" Margin="132,142,132,76" Visibility="Hidden">
+            <Border x:Name="CanvasBorder2" BorderBrush="Black" BorderThickness="1" Height="216" Width="536" HorizontalAlignment="Center" VerticalAlignment="Top" IsEnabled="False"/>
+            <Separator HorizontalAlignment="Left" VerticalAlignment="Top" Height="9" RenderTransformOrigin="0.5,0.5" Width="444" Foreground="#FF00E2FF" Canvas.Left="55" Canvas.Top="1">
+                <Separator.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF00F9FF"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Separator.Background>
+                <Separator.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="5"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Separator.RenderTransform>
+            </Separator>
+            <Label Content="Вход" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="444" Canvas.Top="187"/>
+            <Label Content="Ряд 1" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="20" Canvas.Top="46"/>
+            <Label Content="Ряд 1" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="495" Canvas.Top="46"/>
+            <Label Content="Ряд 2" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="20" Canvas.Top="86"/>
+            <Label Content="Ряд 3" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="20" Canvas.Top="121"/>
+            <Label Content="Ряд 4" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="20" Canvas.Top="156"/>
+            <Label Content="Ряд 2" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="495" Canvas.Top="86"/>
+            <Label Content="Ряд 3" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="495" Canvas.Top="121"/>
+            <Label Content="Ряд 4" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="495" Canvas.Top="156"/>
+
+            <Label Content="1" Canvas.Left="253" Canvas.Top="51" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label Content="2" Canvas.Left="285" Canvas.Top="51" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label Content="1" Canvas.Left="214" Canvas.Top="86" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label Content="1" Canvas.Left="214" Canvas.Top="121" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Label Content="1" Canvas.Left="177" Canvas.Top="154" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Label Content="2" Canvas.Left="245" Canvas.Top="86" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label Content="3" Canvas.Left="285" Canvas.Top="86" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label Content="4" Canvas.Left="318" Canvas.Top="86" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label Content="2" Canvas.Left="246" Canvas.Top="121" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label Content="3" Canvas.Left="285" Canvas.Top="121" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label Content="4" Canvas.Left="318" Canvas.Top="121" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label Content="2" Canvas.Left="214" Canvas.Top="154" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label Content="3" Canvas.Left="245" Canvas.Top="154" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Label Content="4" Canvas.Left="285" Canvas.Top="154" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label Content="5" Canvas.Left="318" Canvas.Top="154" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+            <CheckBox x:Name="thirdOneOne" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="245" Canvas.Top="49">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="thirdOneTwo" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="277" Canvas.Top="49">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="thirdThreeOne" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="206" Canvas.Top="119">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="thirdThreeTwo" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="238" Canvas.Top="119">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="thirdThreeThree" Canvas.Left="278" Canvas.Top="119" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="thirdThreeFourth" Canvas.Left="310" Canvas.Top="119" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="thirdTwoOne" Canvas.Left="206" Canvas.Top="84" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="thirdTwoTwo" Canvas.Left="238" Canvas.Top="84" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="thirdTwoThree" Canvas.Left="278" Canvas.Top="84" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="thirdTwoFourth" Canvas.Left="310" Canvas.Top="84" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="thirdFourthTwo" Canvas.Left="206" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="thirdFourthThree" Canvas.Left="238" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="thirdFourthFourth" Canvas.Left="278" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="thirdFourthFive" Canvas.Left="310" Canvas.Top="152" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <CheckBox x:Name="thirdFourthOne" Canvas.Left="169" Canvas.Top="152" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+        </Canvas>
+
+
+    </Grid>
+</Window>

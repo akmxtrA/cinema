@@ -1,0 +1,26 @@
+﻿<Window x:Class="cinema.addFilm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:cinema"
+        mc:Ignorable="d"
+        Title="addFilm" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Image x:Name="img" HorizontalAlignment="Left" Height="351" Margin="10,10,0,0" VerticalAlignment="Top" Width="259" Source="/res/bogatiri.jpg"/>
+        <Button x:Name="changePhotoBtn" Content="Изменить обложку" HorizontalAlignment="Left" Margin="79,373,0,0" VerticalAlignment="Top" Click="changePhotoBtn_Click"/>
+        <Label Content="Название:" HorizontalAlignment="Left" Margin="284,13,0,0" VerticalAlignment="Top"/>
+        <Label Content="Продолжительность:" HorizontalAlignment="Left" Margin="284,44,0,0" VerticalAlignment="Top"/>
+        <Label Content="Дата выхода:" HorizontalAlignment="Left" Margin="284,75,0,0" VerticalAlignment="Top"/>
+        <Label Content="Описание:" HorizontalAlignment="Left" Margin="284,106,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="addFilmBtn" Content="Сохранить" HorizontalAlignment="Left" Margin="347,373,0,0" VerticalAlignment="Top" Click="addFilmBtn_Click"/>
+        <DatePicker x:Name="releaseDate" HorizontalAlignment="Left" Margin="370,77,0,0" VerticalAlignment="Top" Width="382"/>
+        <TextBox x:Name="durationTxt" HorizontalAlignment="Left" Margin="408,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="344"/>
+        <TextBox x:Name="nameTxt" HorizontalAlignment="Left" Margin="349,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="403"/>
+        <Label Content="минут" HorizontalAlignment="Left" Margin="752,44,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="descriptionTxt" HorizontalAlignment="Left" Margin="356,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="396" Height="251"/>
+        <TextBox x:Name="imgNameTxt" HorizontalAlignment="Left" Margin="74,166,0,0" TextWrapping="Wrap" Text="img" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+        <Button x:Name="closeBtn" Content="Закрыть" HorizontalAlignment="Left" Margin="471,373,0,0" VerticalAlignment="Top" Click="closeBtn_Click"/>
+
+    </Grid>
+</Window>

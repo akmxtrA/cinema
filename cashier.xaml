@@ -1,0 +1,37 @@
+﻿<Window x:Class="cinema.cashier"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:cinema"
+        mc:Ignorable="d"
+        Title="cashier" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="349" Margin="0,70,0,0" VerticalAlignment="Top" Width="792">
+            <TabItem Header="Сеансы">
+                <Grid Background="#FFE5E5E5">
+                    <ListView x:Name="sessionsView" HorizontalAlignment="Center" Width="786">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Columns="2"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Фильмы">
+                <Grid Background="#FFE5E5E5">
+                    <ListView x:Name="filmsView" HorizontalAlignment="Center" Width="786">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Columns="3"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                    </ListView>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="logoutBtn" Content="Выйти" HorizontalAlignment="Left" Margin="708,28,0,0" VerticalAlignment="Top" Width="74" Click="logoutBtn_Click"/>
+        <Label x:Name="nameLabel" Content="login" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
